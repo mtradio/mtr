@@ -1,0 +1,97 @@
+<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" Content="text-html; charset=big5">
+ <title>MR</title>
+<link rel="stylesheet" type="text/css" href="css/de.css">
+<body> 
+
+<div id="musicplay" style="border-width:2px; border-color:#FFFFFF; position: absolute; top:0px; left:30px; width:800px; height:40px;">55
+
+<audio id="demo"  src="http://mtradio.twbbs.org:8080/mtr.ogg" ></audio>
+
+<div id="pa"  style=" background-color:#FFFFFF; position: absolute; top:45px; left:276px; height:4px;" ></div>
+ <script>
+ (function(window, undefined) {
+ 	var player = document.getElementById('demo'),
+ 	map =  ['volume'];
+ 	window.setInterval(function(){
+ 		var str = ''  ;
+ 		var a01 = ''  ;
+ 		
+ 		for(var i=0, j=map.length; i<j; i++) 
+ 	    
+ 		{
+ 			str += map[i] + ' : ' + player[map[i]] + '%';
+ 			a01 = player[map[i]]*230 ;
+ 		}
+ 		
+ 		document.getElementById('pa').innerHTML = '';
+ 		document.getElementById("pa").style.width = a01 ;
+ 		
+ 		 }, 100);
+ 		 
+ })(window);
+ 
+ </script>
+ 
+<BR>
+<div style= "position: absolute; top:6px; left:150px;">
+<img src="img/mu01.png" onclick="document.getElementById('demo').play()" style="width:40px; height:40px;  " title="收聽">
+&nbsp
+<img src="img/mu02.png" onclick="JavaScript:window.location.reload()" style="width:40px; height:40px;  " title="停止">
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="img/mu03.png" onclick="document.getElementById('demo').volume+=0.02" style="width:40px; height:40px;  " title="音量++">
+<img src="img/mu04.png" onclick="document.getElementById('demo').volume-=0.02" style="width:40px; height:40px;  " title="音量--">
+&nbsp&nbsp&nbsp&nbsp
+ <img src="img/mu05.png" onclick="document.getElementById('demo').volume=1" style="width:40px; height:40px;  " title="音量MAX">
+ <img src="img/mu06.png" onclick="document.getElementById('demo').volume=0.5" style="width:40px; height:40px;  " title="音量50%">
+ <img src="img/mu07.png" onclick="document.getElementById('demo').volume=0" style="width:40px; height:40px;  " title="音量0">
+&nbsp&nbsp&nbsp&nbsp
+ <a href="http://mtradio.twbbs.org:8080/mtr.ogg.m3u" target="_blank"  > <img src="img/mu08.png"  style="width:40px; height:40px;  " title="M3U連結"></a>
+
+ <a href="http://mtradio.twbbs.org:8000/listen.pls" target="_blank"  > <img src="img/mu09.png"  style="width:40px; height:40px;  " title="PLS連結"></a>
+&nbsp&nbsp&nbsp
+
+ <a href="listen.m3u" target="_blank"  > <img src="img/mu08.png"  style="width:40px; height:40px;  " title="PLS連結"></a>
+&nbsp&nbsp&nbsp
+
+ <a href="http://www.geocities.jp/mikotoradio/phone.html" target="_blank"  > <img src="img/mu10.png"  style="width:40px; height:40px;  "title="手機用介面"></a>
+</div>
+ </div>
+  
+  
+ <div style= "position: absolute; top:5px; left:750px;">
+ </div>
+
+ <!--
+ 
+ <img src="img/mu01.png" onclick="document.getElementById('demo').play()" style="width:40px; height:40px; position: absolute; top:10px; left:200px; ">
+<img src="img/mu02.png" onclick="JavaScript:window.location.reload()" style="width:30px; height:30px; position: absolute; top:10px; left:45px; ">
+<img src="img/mu03.png" onclick="document.getElementById('demo').volume+=0.04" style="width:30px; height:30px; position: absolute; top:10px; left:75px; ">
+<img src="img/mu04.png" onclick="document.getElementById('demo').volume-=0.04" style="width:30px; height:30px; position: absolute; top:10px; left:105px; ">
+
+ <img src="img/mu05.png" onclick="document.getElementById('demo').volume=1" style="width:30px; height:30px; position: absolute; top:10px; left:135px; ">
+ <img src="img/mu06.png" onclick="document.getElementById('demo').volume=0.5" style="width:30px; height:30px; position: absolute; top:10px; left:165px; ">
+ <img src="img/mu07.png" onclick="document.getElementById('demo').volume=0" style="width:30px; height:30px; position: absolute; top:10px; left:195px; ">
+ 
+ 
+ <div id="panel"></div>
+ <script>
+ (function(window, undefined) {
+ 	var player = document.getElementById('demo'),
+ 	map =  ['error','src','currentSrc','networkState','readyState','preload','buffered','played','seekable','seeking','currentTime','startTime','duration','paused','defaultPlaybackRate','playbackRate','ended','autoplay','loop','controls','volume','muted'];
+ 	window.setInterval(function(){
+ 		var str = '';
+ 		for(var i=0, j=map.length; i<j; i++) {
+ 			str += map[i] + ' : ' + player[map[i]] + '<br>\n';
+ 		}
+ 		document.getElementById('panel').innerHTML = str;
+ 	}, 1000);
+ })(window);
+
+ </script>
+-->
+ 
+ 
+</body>
+</html>

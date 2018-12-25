@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" Content="text-html; charset=big5">
+ <title>MR</title>
+
+<link rel="stylesheet" type="text/css" href="css/range.css">
+<body > 
+ <audio id="mtr"  src="http://mtradio.xbo.tw:8000/;" preload ="none" ><font size=10 color=FFFFFF>原來是不支援</FONT></audio>
+&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="http://www.geocities.jp/mikotoradio/img/mu01.png" onclick="document.getElementById('mtr').play()" style="width:120px; height:120px; " title="收聽">
+<img src="http://www.geocities.jp/mikotoradio/img/mu02.png" onclick="JavaScript:window.location.reload()" style="width:120px; height:120px;  " title="停止">
+
+<script>
+ (function(window, undefined) {
+ 	var player = document.getElementById('mtr'), //指定播放器ID
+ 	map =  ['volume']; 
+ 	
+ 	window.setInterval(function(){
+	var x = document.getElementById("mtrRange").value;
+    document.getElementById('mtr').volume = x*0.01;
+ 		 }, 100);
+ })(window);
+ 
+  </script>
+ 
+  <input type="range" id="mtrRange"min="0" max="100" step="2" value="50"  >
+</body>
+</html>

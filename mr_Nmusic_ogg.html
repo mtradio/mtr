@@ -1,0 +1,121 @@
+<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" Content="text-html; charset=big5">
+ <title>MR</title>
+<link rel="stylesheet" type="text/css" href="css/de.css">
+<body> 
+<div>
+<iframe style="position:absolute;left:1px;top:0px;"  width="25" height="25" src="http://mtradio.twbbs.org:8000/" scrolling="no" frameborder="0" border="0" ></iframe>
+</div>
+<a href="http://mtradio.twbbs.org:8000/" target="_blank"><img src="img/txt_1.png" style="position:absolute;left:10px;top:30px;" width="10" height="10"></a>
+
+<iframe style="position:absolute;left:30px;top:0px;"  width="25" height="25" src="http://mtradio.twbbs.org:8080/" scrolling="no" frameborder="0" border="0" ></iframe>
+</div>
+<a href="http://mtradio.twbbs.org:8080/" target="_blank"><img src="img/txt_1.png" style="position:absolute;left:35px;top:30px;" width="10" height="10"></a>
+
+
+<!---播放器開始---->
+<audio id="mtr"  src="http://mtradio.twbbs.org:8080/mtr.ogg" preload ="none" ></audio> <!--HTML5原生播放器 連結放此處-->
+
+<!--音量條開始-->
+
+<div id="di"  style=" background-color:#000000; position: absolute; top:46px; left:276px; height:4px; width:231px; " ></div><!--音量條背景-->
+<div id="pa"  style=" background-color:#FFFFFF; position: absolute; top:46px; left:276px; height:4px;" ></div><!--音量變化條-->
+
+ <script>
+ (function(window, undefined) {
+ 	var player = document.getElementById('mtr'), //指定播放器ID
+ 	map =  ['volume']; 
+ 	
+ 	window.setInterval(function(){
+ 		var str = ''  ;
+ 		var a01 = ''  ; //音量變化條的變數
+ 		var a02 = ''  ; //音量條背景透明的變數
+ 		
+ 		for(var i=0, j=map.length; i<j; i++) 
+ 	    
+ 		{
+ 			str += map[i] + ' : ' + player[map[i]] + '%';
+ 			a01 = player[map[i]]*230 ;  //音量變化原始質是1 所以要乘數 讓它加大變化 乘數越大音量變化條越長
+ 			a02 = player[map[i]] ; 
+ 			//音量條背景透明質 音量原始最大質是1 再來就是0.9-0.1 所以透明值指定跟音量值一樣 音量越大越不透明 越小越透明
+ 		}
+ 		
+ 		document.getElementById('pa').innerHTML = ''; //在音量變化條顯示字串
+ 		document.getElementById("pa").style.width = a01 ;//指定div id pa 的 width隨著 a01(音量變化條的變數)而改變
+ 		document.getElementById("di").style.opacity = a02 ;////指定div id di 的 opacity隨著 a02(音量條背景透明的變數)而改變
+ 		 }, 100);
+ })(window);
+ 
+ </script>
+ <!--音量條結束-->
+ 
+<BR>
+<!--圖片按鍵操作-->
+<div style= "position: absolute; top:6px; left:150px;">
+<img src="img/mu01.png" onclick="document.getElementById('mtr').play()" style="width:40px; height:40px;  " title="收聽">
+&nbsp
+<img src="img/mu02.png" onclick="JavaScript:window.location.reload()" style="width:40px; height:40px;  " title="停止">
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="img/mu03.png" onclick="document.getElementById('mtr').volume+=0.02" style="width:40px; height:40px;  " title="音量++">
+
+<img src="img/mu04.png" onclick="document.getElementById('mtr').volume-=0.02" style="width:40px; height:40px;  " title="音量--">
+
+&nbsp&nbsp&nbsp&nbsp
+ <img src="img/mu05.png" onclick="document.getElementById('mtr').volume=1" style="width:40px; height:40px;  " title="音量MAX">
+ <img src="img/mu06.png" onclick="document.getElementById('mtr').volume=0.5" style="width:40px; height:40px;  " title="音量50%">
+ <img src="img/mu07.png" onclick="document.getElementById('mtr').volume=0" style="width:40px; height:40px;  " title="音量0">
+&nbsp&nbsp&nbsp&nbsp
+</div>
+<!---播放器end---->
+
+<div style= "position: absolute; top:6px; left:540px;">
+
+ <a href="listen.m3u" target="_blank"  > <img src="img/mu11.png"  style="width:40px; height:40px;  " title="IE專用"></a>
+
+ &nbsp&nbsp &nbsp&nbsp
+ <a href="http://mtradio.twbbs.org:8080/mtr.ogg.m3u" target="_blank"  > <img src="img/mu08.png"  style="width:40px; height:40px;  " title="M3U連結"></a>
+
+ <a href="http://mtradio.twbbs.org:8000/listen.pls" target="_blank"  > <img src="img/mu09.png"  style="width:40px; height:40px;  " title="PLS連結"></a>
+ &nbsp&nbsp &nbsp&nbsp
+ 
+ <a href="http://www.geocities.jp/mikotoradio/phone.html" target="_blank"  > <img src="img/mu10.png"  style="width:40px; height:40px;  "title="手機用介面"></a>
+</div>
+ 
+ <div style= "position: absolute; top:5px; left:800px;">
+ <font size=2 color=FFFFFF>收聽網址: http://mtradio.twbbs.org:8000 或  http://mtradio.twbbs.org:8080/mtr.ogg <BR>
+ IE瀏覽器請按IE圖案用音樂播放器聽 = =;;  雜談室可以抬槓 想要交流聊天 可以到那喔</font>
+ </div>
+ 
+ <!--
+ 
+ <img src="img/mu01.png" onclick="document.getElementById('demo').play()" style="width:40px; height:40px; position: absolute; top:10px; left:200px; ">
+<img src="img/mu02.png" onclick="JavaScript:window.location.reload()" style="width:30px; height:30px; position: absolute; top:10px; left:45px; ">
+<img src="img/mu03.png" onclick="document.getElementById('demo').volume+=0.04" style="width:30px; height:30px; position: absolute; top:10px; left:75px; ">
+<img src="img/mu04.png" onclick="document.getElementById('demo').volume-=0.04" style="width:30px; height:30px; position: absolute; top:10px; left:105px; ">
+
+ <img src="img/mu05.png" onclick="document.getElementById('demo').volume=1" style="width:30px; height:30px; position: absolute; top:10px; left:135px; ">
+ <img src="img/mu06.png" onclick="document.getElementById('demo').volume=0.5" style="width:30px; height:30px; position: absolute; top:10px; left:165px; ">
+ <img src="img/mu07.png" onclick="document.getElementById('demo').volume=0" style="width:30px; height:30px; position: absolute; top:10px; left:195px; ">
+ 
+ 
+ <div id="panel"></div>
+ <script>
+ (function(window, undefined) {
+ 	var player = document.getElementById('demo'),
+ 	map =  ['error','src','currentSrc','networkState','readyState','preload','buffered','played','seekable','seeking','currentTime','startTime','duration','paused','defaultPlaybackRate','playbackRate','ended','autoplay','loop','controls','volume','muted'];
+ 	window.setInterval(function(){
+ 		var str = '';
+ 		for(var i=0, j=map.length; i<j; i++) {
+ 			str += map[i] + ' : ' + player[map[i]] + '<br>\n';
+ 		}
+ 		document.getElementById('panel').innerHTML = str;
+ 	}, 1000);
+ })(window);
+
+ </script>
+-->
+ 
+ 
+</body>
+</html>

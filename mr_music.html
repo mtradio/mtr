@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" Content="text-html; charset=big5">
+ <title>MR</title>
+<link rel="stylesheet" type="text/css" href="css/de.css">
+
+<!--
+<embed src="jp.swf" flashvars="url=123.50.42.92:8000/;&volume=50&buffering=5&title=MTRadio" width="500" height="30" scale="auto"  wmode="transparent"  allowscriptaccess="always" type="application/x-shockwave-flash" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+<video id="demo"   controls  preload ="none"  src="http://mtradio.twbbs.org:8000" ></video>
+-->
+
+<BR>
+<audio id="demo" controls   preload ="none"src="http://mtradio.twbbs.org:8080/mtr.ogg" ></audio>
+
+<div id="panel"></div>
+ <script>
+ (function(window, undefined) {
+ 	var player = document.getElementById('demo'),
+ 	map =  ['volume'];
+ 	window.setInterval(function(){
+ 		var str = '';
+ 		for(var i=0, j=map.length; i<j; i++) 
+ 		{
+ 			str += map[i] + ' : ' + player[map[i]] + '%';
+ 		}
+ 		
+ 		
+ 		document.getElementById('panel').innerHTML = str;
+ 	}, 1000);
+ })(window);
+
+ </script>
+</body>
+</html>

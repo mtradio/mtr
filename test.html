@@ -1,0 +1,32 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<title>Preload Ready</title>
+
+<script>
+var modelDialogShowed=0;
+function init() {refreshClock();setInterval("refreshClock()",500);}
+function refreshClock() {var now = new Date();var Hours;var Mins;var Time;Hours = now.getHours();if (Hours >= 12) Time = "PM ";else Time = "¤W¤È ";if (Hours > 12) Hours -= 12;if (Hours == 0) Hours = 12;Mins = now.getMinutes();if (Mins < 10) Mins = "0" + Mins;document.getElementById("tray").}
+function startMenu() {if(!modelDialogShowed) document.getElementById("startmenu").style.display = (document.getElementById("startmenu").style.display == 'none'?'block':'none');}
+function showDialog(hideObj,showObj) {modelDialogShowed=1; document.getElementById(hideObj).style.display = 'none'; document.getElementById(showObj).style.display = 'block';}
+function hideDialog(Obj) {modelDialogShowed=0; document.getElementById(Obj).style.display = 'none';}
+function shutdownDialog() {showDialog("startmenu","shutdown1");}
+</script>
+
+</head>
+<body>
+<audio id="demo" preload ="none" controls="controls" src="http://123.50.42.92:8000/;" style="width: 350px;"></audio>
+<P>
+
+<img id="muplay" src="img\mup.png" onclick="hideDialog('muplay')" style="width:45px; position: absolute; top:60px; left:10; ">
+
+<img id="mustop" src="img\mus.png" onclick="JavaScript:window.location.reload() " style="width:45px; display:none;" >
+
+
+
+  <button onclick="document.getElementById('demo').play()" style="width:90px; height:27px; position: absolute; top:10px; left:10px; ">Play &#9658;</button>
+  <button onclick="JavaScript:window.location.reload()" style="width:80px;height:27px; position: absolute; top:10px; left:103px; ">Stop</button>
+
+
+</body>
+</html>

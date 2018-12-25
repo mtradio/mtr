@@ -1,0 +1,88 @@
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=big5">
+  <title>MR</title>
+ <link rel="stylesheet" type="text/css" href="css/line.css">
+ <!-----------------圖片動畫------------------->
+<script type="text/javascript" src="radiobox.js"></script>
+<script language="JavaScript" type="text/JavaScript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+function hideDialog(Obj) {modelDialogShowed=0; document.getElementById(Obj).style.display = 'none';}
+
+
+function init() {refreshClock();setInterval("refreshClock()",500);}
+function refreshClock() {var now = new Date();var Hours;var Mins;var Time;Hours = now.getHours();if (Hours >= 12) Time = "PM";else Time = "AM";if (Hours > 12) Hours -= 12;if (Hours == 0) Hours = 12;Mins = now.getMinutes();if (Mins < 10) Mins = "0" + Mins;document.getElementById("time").innerHTML=Time + "-" + Hours + ":" + Mins;}
+
+function showDialog(Obj) {modelDialogShowed=0; document.getElementById(Obj).style.display = '';}
+function hideDialog(Obj) {modelDialogShowed=0; document.getElementById(Obj).style.display = 'none';}
+</script>
+
+
+<!------------------------------------->
+</head>
+
+
+<body onload="init()">
+
+<div id="sos" style="  width: 460px; position: absolute; top:130px; left:200px;"  >
+<font size=4 color=red >  <BR>
+
+<BR>
+</font>
+
+</div>
+
+<!--
+<iframe class="mr1" name="mtr1" src="http://mtradio.xbo.tw:4095/ext.html" allowTransparency="true"  width=99%  height=99% style=" position: absolute;top:0; left:0px; "></iframe> 
+-->
+<iframe class="mr1" name="mtr1" src="http://mtradio.xbo.tw:4095/ext.html" allowTransparency="true"  width=99%  height=99% style=" position: absolute;top:0; left:0px; "></iframe> 
+
+<!--
+<iframe class="mr1" name="mtr1" src="http://mtradio.twbbs.org:4095/ext.html" allowTransparency="true"  width=99%  height=99% style=" position: absolute;top:0; left:0px; "></iframe> 
+
+
+<object type="text/html" data=".." width="1500" height="655" ></object>
+-->
+
+<!-- BEGIN CBOX --- v4.3 -->
+<div><iframe frameborder="0" width="440" height="130" src="http://www4.cbox.ws/box/?boxid=4136900&amp;boxtag=2wrfcx&amp;sec=main" marginheight="2" marginwidth="2" scrolling="auto" allowtransparency="yes" name="cboxmain4-4136900" style="border:#ababab 1px solid; position: absolute;top:470; left:760px; " id="cboxmain4-4136900"></iframe></div>
+<div><iframe frameborder="0" width="440" height="65" src="http://www4.cbox.ws/box/?boxid=4136900&amp;boxtag=2wrfcx&amp;sec=form" marginheight="2" marginwidth="2" scrolling="no" allowtransparency="yes" name="cboxform4-4136900" style="border:#ababab 1px solid;border-top:0px ;position: absolute;top:600; left:760;" id="cboxform4-4136900"></iframe></div>
+<!-- END CBOX -->
+<!--
+<div id="sos" style="  width: 460px; position: absolute; top:400px; left:10px;"  >
+<font size=4 color=> 阿....伺服器因為某些問題掛掉了  <BR>
+先看看現在時間是 <font id="time"></font><BR>
+由於我不會整天都在電腦前 <BR>
+所以了 當遇到掛掉了半小時還電台沒醒來時 看看時間<BR>
+時間是AM1點 ~ PM4點之間掛掉了 <BR>
+就暫時先找別處聽歌 等到PM5點之後再回來<BR>
+
+因為以上時段區間 我睡覺&上班中..<BR>
+<BR>
+</font>
+<P>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<button onclick="hideDialog('sos')" >好喔</button>
+</div>
+-->
+
+</body>
+</html>
